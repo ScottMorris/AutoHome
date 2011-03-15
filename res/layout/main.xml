@@ -5,18 +5,61 @@
     android:layout_height="fill_parent"
     android:background="#FFFFFF"
     >
-<LinearLayout android:layout_width="fill_parent" 
-	android:id="@+id/titleBar" 
-	android:layout_height="wrap_content">
-	<TextView android:textColor="#000000" 
-		android:id="@+id/TextView01" 
-		android:layout_height="wrap_content" 
+	<LinearLayout android:layout_width="fill_parent" 
+		android:id="@+id/titleBar" 
+		android:layout_height="wrap_content">
+		<TextView android:textColor="#000000" 
+			android:id="@+id/TextView01" 
+			android:layout_height="wrap_content" 
+			android:layout_width="fill_parent" 
+			android:text="@string/hello"></TextView>
+	</LinearLayout>
+	<LinearLayout android:id="@+id/LinearLayoutItems" 
 		android:layout_width="fill_parent" 
-		android:text="@string/hello"></TextView>
+		android:layout_height="wrap_content">
+		<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:stretchColumns="1">
+		    <TableRow>
+		    	<RelativeLayout
+		    		xmlns:android="http://schemas.android.com/apk/res/android"
+	                android:layout_width="fill_parent" 
+	                android:layout_height="wrap_content"
+	                android:background="#0000FF"
+	                android:padding="10px" >	                	
+					<FrameLayout 
+						android:layout_height="wrap_content" 
+						android:id="@+id/FrameLayout01" 
+						android:layout_width="" >
+						<TextView android:textColor="#000000" 
+							android:id="@+id/TextView03" 
+							android:layout_height="wrap_content" 
+							android:layout_width="fill_parent" 
+							android:text="@string/hello">
+						</TextView>
+					</FrameLayout>
+				</RelativeLayout>
+				<RelativeLayout
+		    		xmlns:android="http://schemas.android.com/apk/res/android"
+	                android:layout_width="fill_parent" 
+	                android:layout_height="wrap_content"
+	                android:background="#0000FF"
+	                android:padding="10px" >
+						<TextView android:textColor="#000000" 
+							android:id="@+id/TextView04" 
+							android:layout_height="wrap_content" 
+							android:layout_width="fill_parent" 
+							android:text="@string/hello">
+						</TextView>
+		    	</RelativeLayout>
+		    </TableRow>
+		</TableLayout>
 	</LinearLayout>
 	<GridView android:id="@+id/CommonTasks"
-		android:layout_width="wrap_content" 
-		android:layout_height="wrap_content"></GridView>
+			android:layout_width="wrap_content" 
+			android:layout_height="wrap_content">
+	</GridView>
 	<LinearLayout android:id="@+id/LinearLayout01" 
 		android:layout_width="fill_parent" 
 		android:layout_height="wrap_content">
@@ -29,17 +72,7 @@
 				android:layout_width="fill_parent" 
 				android:text="@string/hello"></TextView>
 		</RelativeLayout>
-</LinearLayout>
+	</LinearLayout>
 <!--http://developer.android.com/resources/samples/ApiDemos/src/com/example/android/apis/view/Grid1.html-->
-
-
-
-
-
-
-
-
-
-
 
 </LinearLayout>
