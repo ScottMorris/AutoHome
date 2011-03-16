@@ -1,6 +1,6 @@
-<LinearLayout android:id="@+id/LinearLayout01" 
+<RelativeLayout android:id="@+id/RelativeLayout00" 
 	android:layout_width="fill_parent" 
-	android:layout_height="fill_parent" 
+	android:layout_height="fill_parent"
 	android:background="#FFFFFF"
 	xmlns:android="http://schemas.android.com/apk/res/android">
 	
@@ -8,11 +8,11 @@
 		android:layout_width="fill_parent" 
 		android:id="@+id/titleBar">
 		<RelativeLayout android:id="@+id/RelativeLayout01" 
-			android:layout_width="wrap_content" 
+			android:layout_width="fill_parent" 
 			android:layout_height="wrap_content">
 				<TextView android:layout_width="fill_parent" 
 					android:id="@+id/title" 
-					android:text="@string/hello" 
+					android:text="@string/pvrTitle" 
 					android:layout_height="wrap_content" 
 					android:textColor="#000000">
 				</TextView>
@@ -24,9 +24,73 @@
 					android:textColor="#000000">
 				</TextView>
 				<ImageView android:id="@+id/statusIcon" 
-					android:layout_width="wrap_content" 
+					android:layout_width="fill_parent" 
 					android:layout_height="wrap_content">
 				</ImageView>
+		
 		</RelativeLayout>
 	</LinearLayout>
-</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:id="@+id/ShowListLayout"
+		android:layout_below="@+id/titleBar">
+		<RelativeLayout android:id="@+id/RelativeLayout02" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			<TextView android:layout_height="wrap_content" 
+				android:layout_width="fill_parent" 
+				android:textColor="#000000" 
+				android:text="@string/pvrShowListTitle" 
+				android:id="@+id/showListTitle" android:gravity="center">
+			</TextView>
+		<ListView android:layout_height="wrap_content" android:id="@+id/pvrShowList" android:layout_width="wrap_content" android:layout_below="@+id/showListTitle" android:layout_alignLeft="@+id/showListTitle" android:layout_alignRight="@+id/showListTitle"></ListView>
+</RelativeLayout>
+	</LinearLayout>
+	<LinearLayout android:layout_width="fill_parent" 
+		android:layout_height="wrap_content" 
+		android:id="@+id/Controls"
+		android:layout_below="@+id/ShowListLayout">
+		<RelativeLayout android:id="@+id/RelativeLayout03" 
+			android:layout_width="fill_parent" 
+			android:layout_height="wrap_content">
+			<Button android:layout_height="50px" 
+				android:layout_width="wrap_content"  
+				android:id="@+id/recordButton" 
+				android:text="Record">
+			</Button>
+			<Button android:layout_height="50px" 
+				android:layout_width="wrap_content"  
+				android:id="@+id/rewindButton" 
+				android:layout_toRightOf="@+id/recordButton"
+				android:text="Rew"
+				ndroid:layout_alignTop="@+id/recordButton" 
+				android:layout_alignBottom="@+id/recordButton">
+			</Button>
+			<Button android:layout_height="50px" 
+				android:layout_width="wrap_content"  
+				android:id="@+id/playPauseButton" 
+				android:layout_toRightOf="@+id/rewindButton"
+				android:text="Play"
+				ndroid:layout_alignTop="@+id/recordButton" 
+				android:layout_alignBottom="@+id/recordButton">
+			</Button>
+			<Button android:layout_height="50px" 
+				android:layout_width="wrap_content"  
+				android:id="@+id/fastForwardButton" 
+				android:layout_toRightOf="@+id/playPauseButton"
+				android:text="FF"
+				ndroid:layout_alignTop="@+id/playPauseButton" 
+				android:layout_alignBottom="@+id/playPauseButton">
+			</Button>
+			<EditText android:layout_height="50px" 
+				android:id="@+id/pvrChannelEntry" 
+				android:layout_width="wrap_content" 
+				android:text="@+id/EditText01" 
+				android:layout_toRightOf="@+id/fastForwardButton" 
+				android:layout_alignTop="@+id/fastForwardButton" 
+				android:layout_alignBottom="@+id/fastForwardButton">
+			</EditText>
+		</RelativeLayout>
+	</LinearLayout>
+
+</RelativeLayout>

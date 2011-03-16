@@ -3,4 +3,11 @@
     <string name="hello">AutoHome!</string>
     <string name="app_name">Automated Home</string>
     <string name="status">Status</string>
+    <!--  Activity Titles -->
+    <string name="pvrTitle">Television</string>
+    <string name="climateTitle">Climate</string>
+    <string name="kitchenTitle">Kitchen</string>
+    <string name="stereoTitle">Stereo</string>
+    <!-- PVR Activity Strings -->
+    <string name="pvrShowListTitle">Past Shows Recorded</string>
 </resources>
