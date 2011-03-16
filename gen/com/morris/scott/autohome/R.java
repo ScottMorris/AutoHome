@@ -20,7 +20,6 @@ public final class R {
     public static final class id {
         public static final int CommonTasks=0x7f050007;
         public static final int Controls=0x7f050011;
-        public static final int EditText01=0x7f050017;
         public static final int LinearLayout01=0x7f050000;
         public static final int RelativeLayout00=0x7f05000c;
         public static final int RelativeLayout01=0x7f050002;
@@ -34,6 +33,7 @@ public final class R {
         public static final int icon_image=0x7f05000a;
         public static final int icon_text=0x7f05000b;
         public static final int playPauseButton=0x7f050015;
+        public static final int pvrChannelEntry=0x7f050017;
         public static final int pvrShowList=0x7f050010;
         public static final int recordButton=0x7f050013;
         public static final int rewindButton=0x7f050014;
@@ -46,10 +46,11 @@ public final class R {
     public static final class layout {
         public static final int climate=0x7f030000;
         public static final int kitchen=0x7f030001;
-        public static final int main=0x7f030002;
-        public static final int main_icons=0x7f030003;
-        public static final int pvr=0x7f030004;
-        public static final int stereo=0x7f030005;
+        public static final int list_item=0x7f030002;
+        public static final int main=0x7f030003;
+        public static final int main_icons=0x7f030004;
+        public static final int pvr=0x7f030005;
+        public static final int stereo=0x7f030006;
     }
     public static final class string {
         public static final int app_name=0x7f040001;

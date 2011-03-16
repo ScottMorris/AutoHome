@@ -43,7 +43,14 @@
 				android:text="@string/pvrShowListTitle" 
 				android:id="@+id/showListTitle" android:gravity="center">
 			</TextView>
-		<ListView android:layout_height="wrap_content" android:id="@+id/pvrShowList" android:layout_width="wrap_content" android:layout_below="@+id/showListTitle" android:layout_alignLeft="@+id/showListTitle" android:layout_alignRight="@+id/showListTitle"></ListView>
+		<ListView android:layout_height="wrap_content" 
+			android:id="@+id/pvrShowList" 
+			android:layout_width="wrap_content" 
+			android:layout_below="@+id/showListTitle" 
+			android:layout_alignLeft="@+id/showListTitle" 
+			android:layout_alignRight="@+id/showListTitle"
+			android:background="#888888">
+		</ListView>
 </RelativeLayout>
 	</LinearLayout>
 	<LinearLayout android:layout_width="fill_parent" 
@@ -63,7 +70,7 @@
 				android:id="@+id/rewindButton" 
 				android:layout_toRightOf="@+id/recordButton"
 				android:text="Rew"
-				ndroid:layout_alignTop="@+id/recordButton" 
+				android:layout_alignTop="@+id/recordButton" 
 				android:layout_alignBottom="@+id/recordButton">
 			</Button>
 			<Button android:layout_height="50px" 
@@ -71,24 +78,25 @@
 				android:id="@+id/playPauseButton" 
 				android:layout_toRightOf="@+id/rewindButton"
 				android:text="Play"
-				ndroid:layout_alignTop="@+id/recordButton" 
-				android:layout_alignBottom="@+id/recordButton">
+				android:layout_alignTop="@+id/rewindButton" 
+				android:layout_alignBottom="@+id/rewindButton">
 			</Button>
 			<Button android:layout_height="50px" 
 				android:layout_width="wrap_content"  
 				android:id="@+id/fastForwardButton" 
 				android:layout_toRightOf="@+id/playPauseButton"
 				android:text="FF"
-				ndroid:layout_alignTop="@+id/playPauseButton" 
+				android:layout_alignTop="@+id/playPauseButton" 
 				android:layout_alignBottom="@+id/playPauseButton">
 			</Button>
 			<EditText android:layout_height="50px" 
 				android:id="@+id/pvrChannelEntry" 
-				android:layout_width="wrap_content" 
-				android:text="@+id/EditText01" 
+				android:layout_width="fill_parent"  
 				android:layout_toRightOf="@+id/fastForwardButton" 
 				android:layout_alignTop="@+id/fastForwardButton" 
-				android:layout_alignBottom="@+id/fastForwardButton">
+				android:layout_alignBottom="@+id/fastForwardButton"
+				android:text="Ch. #"
+				android:textColor="#646464">
 			</EditText>
 		</RelativeLayout>
 	</LinearLayout>
