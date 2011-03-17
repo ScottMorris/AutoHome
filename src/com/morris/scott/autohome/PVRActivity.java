@@ -2,14 +2,20 @@ package com.morris.scott.autohome;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.os.Handler;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 
 public class PVRActivity extends Activity {
 
 	ListView recordedShowList;
-	String[] shows = {"The Littlest Hobo S01E04", "Big Bang THeory S03E05"};
+	String[] shows = {"The Littlest Hobo S01E04", "Big Bang Theory S03E05"};
 	
+	Button buttonRecord, buttonRewind, buttonPlayPause, buttonFastForward, buttonStop;
+	
+	
+	Handler timerHandler = new Handler();
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);

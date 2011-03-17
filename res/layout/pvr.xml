@@ -43,7 +43,7 @@
 				android:text="@string/pvrShowListTitle" 
 				android:id="@+id/showListTitle" android:gravity="center">
 			</TextView>
-		<ListView android:layout_height="wrap_content" 
+		<ListView android:layout_height="150px" 
 			android:id="@+id/pvrShowList" 
 			android:layout_width="wrap_content" 
 			android:layout_below="@+id/showListTitle" 
@@ -51,6 +51,21 @@
 			android:layout_alignRight="@+id/showListTitle"
 			android:background="#888888">
 		</ListView>
+		<TextView android:id="@+id/pvr_mediaStatus" 
+			android:layout_width="fill_parent" 
+			android:layout_below="@+id/pvrShowList" 
+			android:layout_height="wrap_content" 
+			android:text="Not Playing" 
+			android:layout_alignLeft="@+id/pvrShowList" 
+			android:layout_alignRight="@+id/pvrShowList">
+		</TextView>
+		<SeekBar android:layout_height="wrap_content" 
+			android:id="@+id/pvr_mediaPosition" 
+			android:layout_width="fill_parent" 
+			android:layout_below="@+id/pvr_mediaStatus" 
+			android:layout_alignLeft="@+id/pvr_mediaStatus" 
+			android:layout_alignRight="@+id/pvr_mediaStatus">
+		</SeekBar>
 </RelativeLayout>
 	</LinearLayout>
 	<LinearLayout android:layout_width="fill_parent" 
@@ -89,12 +104,20 @@
 				android:layout_alignTop="@+id/playPauseButton" 
 				android:layout_alignBottom="@+id/playPauseButton">
 			</Button>
+			<Button android:text="Stop" 
+				android:layout_width="wrap_content" 
+				android:id="@+id/stopButton" 
+				android:layout_height="50px" 
+				android:layout_toRightOf="@+id/fastForwardButton" 
+				android:layout_alignTop="@+id/fastForwardButton" 
+				android:layout_alignBottom="@+id/fastForwardButton">
+			</Button>
 			<EditText android:layout_height="50px" 
 				android:id="@+id/pvrChannelEntry" 
 				android:layout_width="fill_parent"  
-				android:layout_toRightOf="@+id/fastForwardButton" 
-				android:layout_alignTop="@+id/fastForwardButton" 
-				android:layout_alignBottom="@+id/fastForwardButton"
+				android:layout_toRightOf="@+id/stopButton" 
+				android:layout_alignTop="@+id/stopButton" 
+				android:layout_alignBottom="@+id/stopButton"
 				android:text="Ch. #"
 				android:textColor="#646464">
 			</EditText>
