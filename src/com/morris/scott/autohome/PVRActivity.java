@@ -141,7 +141,7 @@ public class PVRActivity extends Activity {
 					timerHandler.postDelayed(updateMediaPostion, 500);
 					playStatus = 1;
 					mediaStatus.setTextColor(Color.BLACK);
-					mediaStatus.setText("Fast Forwarding");
+					mediaStatus.setText("Playing");
 					break;
 				}
 			}

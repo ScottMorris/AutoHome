@@ -13,6 +13,7 @@
         </activity>
 
     <activity android:name=".PVRActivity"></activity>
+    <activity android:name=".ClimateActivity"></activity>
 </application>
 
 

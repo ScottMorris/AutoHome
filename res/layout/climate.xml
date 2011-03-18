@@ -62,7 +62,8 @@
 		<Button android:text="Up" 
 			android:id="@+id/button2" 
 			android:layout_width="150px" 
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content" >
+			<!-- android:onClick="climate_upButtonOnCLick" -->
 		</Button>
 	</LinearLayout>
 	<LinearLayout android:layout_below="@+id/tempButtons" 
@@ -89,7 +90,7 @@
 					android:id="@+id/climate_furnaceStateIcon" 
 					android:layout_height="wrap_content">
 				</ImageView>
-				<ToggleButton android:layout_width="wrap_content" 
+				<ToggleButton android:layout_width="fill_parent" 
 					android:text="ToggleButton" 
 					android:id="@+id/climate_enableFurnace" 
 					android:layout_height="wrap_content" 
@@ -118,14 +119,13 @@
 					android:id="@+id/climate_acStateIcon" 
 					android:layout_height="wrap_content" android:layout_gravity="top">
 				</ImageView>
-				<ToggleButton android:layout_width="wrap_content" 
-					android:text="ToggleButton" 
+				<ToggleButton android:text="ToggleButton" 
 					android:id="@+id/climate_enableAC" 
 					android:layout_height="wrap_content" 
 					android:layout_gravity="right" 
 					android:layout_marginLeft="@dimen/climatePadding"
 					android:textOn="Enabled"
-					android:textOff="Disabled">
+					android:textOff="Disabled" android:layout_width="fill_parent">
 				</ToggleButton>
 			</TableRow>
 		</TableLayout>
