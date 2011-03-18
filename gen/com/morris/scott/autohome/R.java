@@ -10,6 +10,9 @@ package com.morris.scott.autohome;
 public final class R {
     public static final class attr {
     }
+    public static final class dimen {
+        public static final int climatePadding=0x7f040000;
+    }
     public static final class drawable {
         public static final int climate_pressed=0x7f020000;
         public static final int climate_unpressed=0x7f020001;
@@ -18,40 +21,50 @@ public final class R {
         public static final int pvr_unpressed=0x7f020004;
     }
     public static final class id {
-        public static final int CommonTasks=0x7f05000f;
-        public static final int Controls=0x7f05001a;
-        public static final int LinearLayout01=0x7f05000d;
-        public static final int RelativeLayout00=0x7f050000;
-        public static final int RelativeLayout01=0x7f050002;
-        public static final int RelativeLayout02=0x7f050015;
-        public static final int RelativeLayout03=0x7f05001b;
-        public static final int ShowListLayout=0x7f050014;
-        public static final int TextView01=0x7f05000e;
-        public static final int TextView02=0x7f050010;
-        public static final int button1=0x7f05000a;
-        public static final int button2=0x7f05000b;
-        public static final int climate_currentTemp=0x7f050008;
-        public static final int climate_setTemp=0x7f050007;
-        public static final int fastForwardButton=0x7f05001f;
-        public static final int iconView=0x7f050011;
-        public static final int icon_image=0x7f050012;
-        public static final int icon_text=0x7f050013;
-        public static final int playPauseButton=0x7f05001e;
-        public static final int pvrChannelEntry=0x7f050021;
-        public static final int pvrShowList=0x7f050017;
-        public static final int pvr_mediaPosition=0x7f050019;
-        public static final int pvr_mediaStatus=0x7f050018;
-        public static final int recordButton=0x7f05001c;
-        public static final int rewindButton=0x7f05001d;
-        public static final int showListTitle=0x7f050016;
-        public static final int statesLayout=0x7f05000c;
-        public static final int status=0x7f050004;
-        public static final int statusIcon=0x7f050005;
-        public static final int stopButton=0x7f050020;
-        public static final int tempButtons=0x7f050009;
-        public static final int tempValueLayout=0x7f050006;
-        public static final int title=0x7f050003;
-        public static final int titleBar=0x7f050001;
+        public static final int CommonTasks=0x7f060019;
+        public static final int Controls=0x7f060024;
+        public static final int LinearLayout01=0x7f060017;
+        public static final int RelativeLayout00=0x7f060000;
+        public static final int RelativeLayout01=0x7f060002;
+        public static final int RelativeLayout02=0x7f06001f;
+        public static final int RelativeLayout03=0x7f060025;
+        public static final int ShowListLayout=0x7f06001e;
+        public static final int TextView01=0x7f060018;
+        public static final int TextView02=0x7f06001a;
+        public static final int button1=0x7f06000a;
+        public static final int button2=0x7f06000b;
+        public static final int climate_acLabel=0x7f060014;
+        public static final int climate_acStateIcon=0x7f060015;
+        public static final int climate_currentTemp=0x7f060008;
+        public static final int climate_enableAC=0x7f060016;
+        public static final int climate_enableFurnace=0x7f060011;
+        public static final int climate_furnaceLabel=0x7f06000f;
+        public static final int climate_furnaceStateIcon=0x7f060010;
+        public static final int climate_setTemp=0x7f060007;
+        public static final int fastForwardButton=0x7f060029;
+        public static final int iconView=0x7f06001b;
+        public static final int icon_image=0x7f06001c;
+        public static final int icon_text=0x7f06001d;
+        public static final int playPauseButton=0x7f060028;
+        public static final int pvrChannelEntry=0x7f06002b;
+        public static final int pvrShowList=0x7f060021;
+        public static final int pvr_mediaPosition=0x7f060023;
+        public static final int pvr_mediaStatus=0x7f060022;
+        public static final int recordButton=0x7f060026;
+        public static final int rewindButton=0x7f060027;
+        public static final int showListTitle=0x7f060020;
+        public static final int statesLayout=0x7f06000c;
+        public static final int statesLayout01=0x7f060012;
+        public static final int status=0x7f060004;
+        public static final int statusIcon=0x7f060005;
+        public static final int stopButton=0x7f06002a;
+        public static final int tableLayout1=0x7f06000d;
+        public static final int tableRow1=0x7f06000e;
+        public static final int tableRow2=0x7f060013;
+        public static final int tempButtons=0x7f060009;
+        public static final int tempValueLayout=0x7f060006;
+        public static final int title=0x7f060003;
+        public static final int titleBar=0x7f060001;
     }
     public static final class layout {
         public static final int climate=0x7f030000;
@@ -62,17 +75,17 @@ public final class R {
         public static final int stereo=0x7f030005;
     }
     public static final class string {
-        public static final int app_name=0x7f040001;
-        public static final int climateTitle=0x7f040004;
-        public static final int hello=0x7f040000;
-        public static final int kitchenTitle=0x7f040005;
+        public static final int app_name=0x7f050001;
+        public static final int climateTitle=0x7f050004;
+        public static final int hello=0x7f050000;
+        public static final int kitchenTitle=0x7f050005;
         /**  PVR Activity Strings 
          */
-        public static final int pvrShowListTitle=0x7f040007;
+        public static final int pvrShowListTitle=0x7f050007;
         /**   Activity Titles 
          */
-        public static final int pvrTitle=0x7f040003;
-        public static final int status=0x7f040002;
-        public static final int stereoTitle=0x7f040006;
+        public static final int pvrTitle=0x7f050003;
+        public static final int status=0x7f050002;
+        public static final int stereoTitle=0x7f050006;
     }
 }
