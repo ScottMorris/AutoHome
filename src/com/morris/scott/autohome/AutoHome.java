@@ -39,13 +39,23 @@ public class AutoHome extends Activity {
 			public void onItemClick(AdapterView<?> arg0, View v, int position,
 					long id) {
 				Intent chosenScreen;
-				if(position == 0) {
+				switch (position) {
+				case 0:
+					chosenScreen = new Intent(v.getContext(), PVRActivity.class);
+					startActivityForResult(chosenScreen, 0);
+					break;
+				case 1:
+					chosenScreen = new Intent(v.getContext(), ClimateActivity.class);
+					startActivityForResult(chosenScreen, 0);
+					break;
+				}
+				/*if(position == 0) {
 					chosenScreen = new Intent(v.getContext(), PVRActivity.class);
 					//chosenScreen.setClassName("com.morris.scott.autohome", "com.morris.scott.autohome.PVRActivity");
 					//startActivity(chosenScreen);
 					//Intent myIntent = new Intent(view.getContext(), Activity2.class);
 	                startActivityForResult(chosenScreen, 0);
-				}
+				}*/
 				
 				//ImageView imageView = (ImageView)lobbyGridView.getAdapter();
 				//imageView.setImageResource(mPIcons[position]);
