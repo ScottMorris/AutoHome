@@ -49,13 +49,13 @@ public class ClimateActivity extends Activity {
 		final Runnable emulateSysOperation = new Runnable() {
 			
 			public void run() {
-				if((currentTemp > setTemp + 3) && true) {
+				if((currentTemp > setTemp + 3) && acState) {
 					acOn = true;
 					currentTemp -= 1;
 				} else if((currentTemp > setTemp - 3) && furnaceState) {
 					furnaceOn = true;
 					currentTemp += 1;
-				} else if (((currentTemp > setTemp - 2) && acOn) || ((currentTemp < setTemp + 2) && furnaceOn)){
+				} else if (((currentTemp < setTemp - 2) && acOn) || ((currentTemp > setTemp + 2) && furnaceOn)){
 					acOn = false;
 					furnaceOn = false;
 				} else if (acOn)
@@ -75,6 +75,7 @@ public class ClimateActivity extends Activity {
 		handler.postDelayed(emulateSysOperation, 1000);
 		
 		setTempText = (TextView)findViewById(R.id.climate_setTemp);
+		setTempText.setText(setTemp+tempSuffix);
 		currentTempText = (TextView)findViewById(R.id.climate_currentTemp);
 		currentTempText.setText(currentTemp+tempSuffix);
 		
@@ -104,22 +105,22 @@ public class ClimateActivity extends Activity {
 		});
 		
 		furnaceStatus = (ImageView)findViewById(R.id.climate_furnaceStateIcon);
-		furnaceStatus.setOnClickListener(new OnClickListener() {
+		acStatus = (ImageView)findViewById(R.id.climate_acStateIcon);
+		
+		furnaceEnable = (ToggleButton)findViewById(R.id.climate_enableFurnace);
+		furnaceEnable.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
 				furnaceState = furnaceEnable.isChecked();
 			}
 		});
-		acStatus = (ImageView)findViewById(R.id.climate_acStateIcon);
-		acStatus.setOnClickListener(new OnClickListener() {
+		acEnable = (ToggleButton)findViewById(R.id.climate_enableAC);
+		acEnable.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
 				acState = acEnable.isChecked();
 			}
 		});
-		
-		furnaceEnable = (ToggleButton)findViewById(R.id.climate_enableFurnace);
-		acEnable = (ToggleButton)findViewById(R.id.climate_enableAC);
 		
 		
 	}
