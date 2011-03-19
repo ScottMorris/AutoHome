@@ -23,7 +23,7 @@ public class ClimateActivity extends Activity {
 	/*
 	 * Other Variables
 	 */
-	boolean	furnaceState, acState;
+	boolean	furnaceState, acState, furnaceOn = false, acOn = false, tempBeingSet = false;
 	int setTemp = 20, currentTemp = 20;
 	
 	Handler handler = new Handler();
@@ -43,8 +43,36 @@ public class ClimateActivity extends Activity {
 			public void run() {
 				currentTempText.setText(currentTemp+tempSuffix);
 				setTempText.setText(setTemp+tempSuffix);
+				tempBeingSet = false;
 			};
 		};
+		final Runnable emulateSysOperation = new Runnable() {
+			
+			public void run() {
+				if((currentTemp > setTemp + 3) && true) {
+					acOn = true;
+					currentTemp -= 1;
+				} else if((currentTemp > setTemp - 3) && furnaceState) {
+					furnaceOn = true;
+					currentTemp += 1;
+				} else if (((currentTemp > setTemp - 2) && acOn) || ((currentTemp < setTemp + 2) && furnaceOn)){
+					acOn = false;
+					furnaceOn = false;
+				} else if (acOn)
+					currentTemp--;
+				else if (furnaceOn)
+					currentTemp++;
+				else
+					currentTemp++;
+				if (!tempBeingSet)
+					currentTempText.setText(currentTemp+tempSuffix);
+				else
+					setTempText.setText(currentTemp+tempSuffix);
+				handler.postDelayed(this, 1000);
+			};
+		};
+		
+		handler.postDelayed(emulateSysOperation, 1000);
 		
 		setTempText = (TextView)findViewById(R.id.climate_setTemp);
 		currentTempText = (TextView)findViewById(R.id.climate_currentTemp);
@@ -58,7 +86,8 @@ public class ClimateActivity extends Activity {
 				setTempText.setText(currentTemp+tempSuffix);
 				setTemp += 1;
 				currentTempText.setText(setTemp+tempSuffix);
-				handler.postDelayed(resetTempPosition, 2000);
+				tempBeingSet = true;
+				handler.postDelayed(resetTempPosition, 3000);
 			}
 		});
 		downTempButton = (Button)findViewById(R.id.climate_downTemp);
@@ -69,12 +98,25 @@ public class ClimateActivity extends Activity {
 				setTempText.setText(currentTemp+tempSuffix);
 				setTemp -= 1;
 				currentTempText.setText(setTemp+tempSuffix);
-				handler.postDelayed(resetTempPosition, 2000);
+				tempBeingSet = true;
+				handler.postDelayed(resetTempPosition, 3000);
 			}
 		});
 		
 		furnaceStatus = (ImageView)findViewById(R.id.climate_furnaceStateIcon);
+		furnaceStatus.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				furnaceState = furnaceEnable.isChecked();
+			}
+		});
 		acStatus = (ImageView)findViewById(R.id.climate_acStateIcon);
+		acStatus.setOnClickListener(new OnClickListener() {
+			
+			public void onClick(View v) {
+				acState = acEnable.isChecked();
+			}
+		});
 		
 		furnaceEnable = (ToggleButton)findViewById(R.id.climate_enableFurnace);
 		acEnable = (ToggleButton)findViewById(R.id.climate_enableAC);
