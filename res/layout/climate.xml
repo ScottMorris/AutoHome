@@ -54,15 +54,13 @@
 		android:layout_alignRight="@+id/tempValueLayout" 
 		android:id="@+id/tempButtons" android:layout_width="fill_parent">
 		<Button android:text="Down" 
-			android:id="@+id/button1" 
 			android:layout_width="150px" 
 			android:layout_height="wrap_content" 
-			android:layout_marginRight="50px">
+			android:layout_marginRight="50px" android:id="@+id/climate_downTemp">
 		</Button>
 		<Button android:text="Up" 
-			android:id="@+id/button2" 
 			android:layout_width="150px" 
-			android:layout_height="wrap_content" >
+			android:layout_height="wrap_content" android:id="@+id/climate_upTemp">
 			<!-- android:onClick="climate_upButtonOnCLick" -->
 		</Button>
 	</LinearLayout>
