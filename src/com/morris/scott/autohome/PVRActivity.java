@@ -17,7 +17,7 @@ import android.widget.TextView;
 public class PVRActivity extends Activity {
 
 	ListView recordedShowList;
-	String[] shows = {"The Littlest Hobo S01E04", "Big Bang Theory S03E05"};
+	String[] shows = {"The Littlest Hobo S01E04", "Big Bang Theory S03E05", "Fringe S03E02"};
 	
 	Button buttonRecord, buttonRewind, buttonPlayPause, buttonFastForward, buttonStop;
 	TextView mediaStatus;
