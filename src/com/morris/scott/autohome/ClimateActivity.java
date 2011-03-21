@@ -1,6 +1,8 @@
 package com.morris.scott.autohome;
 
 import android.app.Activity;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;
 import android.view.View;
@@ -39,11 +41,20 @@ public class ClimateActivity extends Activity {
 		 * Runnables for the Handler 
 		 */
 		final Runnable resetTempPosition = new Runnable() {
-			
+			boolean flag = false;
 			public void run() {
-				currentTempText.setText(currentTemp+tempSuffix);
-				setTempText.setText(setTemp+tempSuffix);
-				tempBeingSet = false;
+				if(!flag){
+					currentTempText.setTextColor(Color.BLACK);
+					currentTempText.setText(currentTemp+tempSuffix);
+					setTempText.setTextColor(Color.parseColor("#FF7700"));
+					setTempText.setText(setTemp+tempSuffix);
+					tempBeingSet = false;
+					flag = true;
+					handler.postDelayed(this, 2000);
+				} else {
+					setTempText.setTextColor(Color.BLACK);
+					flag = false;
+				}
 			};
 		};
 		final Runnable emulateSysOperation = new Runnable() {
@@ -84,6 +95,7 @@ public class ClimateActivity extends Activity {
 			
 			public void onClick(View v) {
 				handler.removeCallbacks(resetTempPosition);
+				currentTempText.setTextColor(Color.parseColor("#FF7700"));
 				setTempText.setText(currentTemp+tempSuffix);
 				setTemp += 1;
 				currentTempText.setText(setTemp+tempSuffix);
@@ -98,6 +110,7 @@ public class ClimateActivity extends Activity {
 				handler.removeCallbacks(resetTempPosition);
 				setTempText.setText(currentTemp+tempSuffix);
 				setTemp -= 1;
+				currentTempText.setTextColor(Color.parseColor("#FF7700"));
 				currentTempText.setText(setTemp+tempSuffix);
 				tempBeingSet = true;
 				handler.postDelayed(resetTempPosition, 3000);

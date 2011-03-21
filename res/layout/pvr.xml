@@ -48,7 +48,8 @@
 			android:layout_below="@+id/showListTitle" 
 			android:layout_alignLeft="@+id/showListTitle" 
 			android:layout_alignRight="@+id/showListTitle"
-			android:background="#888888" android:layout_height="125px">
+			android:background="#888888" 
+			android:layout_height="135px">
 		</ListView>
 		<TextView android:id="@+id/pvr_mediaStatus" 
 			android:layout_width="fill_parent" 
@@ -118,7 +119,9 @@
 				android:layout_alignTop="@+id/stopButton" 
 				android:layout_alignBottom="@+id/stopButton"
 				android:text="Ch. #"
-				android:textColor="#646464" android:inputType="number" android:scrollHorizontally="true">
+				android:textColor="#646464" 
+				android:scrollHorizontally="true" 
+				android:inputType="phone|number">
 			</EditText>
 		</RelativeLayout>
 	</LinearLayout>
