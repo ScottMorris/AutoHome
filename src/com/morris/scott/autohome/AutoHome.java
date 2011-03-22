@@ -23,8 +23,8 @@ public class AutoHome extends Activity {
         
     }*/
 	GridView lobbyGridView;
-	private String[] cNames = {"Televison", "Climate"}; 
-	private int[] mIcons = {R.drawable.pvr_unpressed, R.drawable.climate_unpressed};
+	private String[] cNames = {"Televison", "Climate", "Kitchen"}; 
+	private int[] mIcons = {R.drawable.pvr_unpressed, R.drawable.climate_unpressed, R.drawable.kitchen_pan};
 	private int[] mPIcons = {R.drawable.pvr_pressed, R.drawable.climate_pressed};
 
 	@Override
@@ -48,7 +48,12 @@ public class AutoHome extends Activity {
 					chosenScreen = new Intent(v.getContext(), ClimateActivity.class);
 					startActivityForResult(chosenScreen, 0);
 					break;
+				case 2:
+					chosenScreen = new Intent(v.getContext(), KitchenActivity.class);
+					startActivityForResult(chosenScreen, 0);
+					break;
 				}
+					
 				/*if(position == 0) {
 					chosenScreen = new Intent(v.getContext(), PVRActivity.class);
 					//chosenScreen.setClassName("com.morris.scott.autohome", "com.morris.scott.autohome.PVRActivity");

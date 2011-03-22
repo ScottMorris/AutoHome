@@ -12,6 +12,7 @@
 
     <activity android:name=".PVRActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
     <activity android:name=".ClimateActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
+    <activity android:name="KitchenActivity" android:theme="@android:style/Theme.NoTitleBar"></activity>
 </application>
 
 
