@@ -52,7 +52,7 @@
 		android:id="@+id/setTimeLayout" 
 		android:orientation="vertical" android:fadingEdge="horizontal">
 		<TimePicker android:layout_width="wrap_content" android:id="@+id/timePicker1" android:layout_height="wrap_content" android:layout_gravity="center_horizontal"></TimePicker>
-		<Button android:layout_height="wrap_content" android:text="Set Start Time" android:layout_width="wrap_content" android:layout_gravity="center_horizontal" android:id="@+id/kitchen_coffee_setTime"></Button>
+		<Button android:layout_height="wrap_content" android:text="Set Auto Brew Time" android:layout_width="wrap_content" android:layout_gravity="center_horizontal" android:id="@+id/kitchen_coffee_setTime"></Button>
 	</LinearLayout>
 	<RelativeLayout android:id="@+id/relativeLayout1" android:layout_height="wrap_content" android:layout_below="@+id/setTimeLayout" android:gravity="center|center_horizontal" android:layout_width="fill_parent">
 		<RelativeLayout android:id="@+id/setOnLayout" android:layout_height="wrap_content" android:layout_alignLeft="@+id/setAutoOnLayout" android:layout_alignRight="@+id/setAutoOnLayout" android:layout_width="wrap_content">

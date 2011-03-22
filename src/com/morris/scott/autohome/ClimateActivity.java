@@ -62,7 +62,7 @@ public class ClimateActivity extends Activity {
 				if((currentTemp > setTemp + 3) && acState) {
 					acOn = true;
 					currentTemp -= 1;
-				} else if((currentTemp > setTemp - 3) && furnaceState) {
+				} else if((currentTemp < setTemp - 3) && furnaceState) {
 					furnaceOn = true;
 					currentTemp += 1;
 				} else if (((currentTemp < setTemp - 2) && acOn) || ((currentTemp > setTemp + 2) && furnaceOn)){
