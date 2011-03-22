@@ -10,6 +10,7 @@ import android.view.View.OnFocusChangeListener;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.SeekBar;
 import android.widget.TextView;
@@ -17,12 +18,13 @@ import android.widget.TextView;
 public class PVRActivity extends Activity {
 
 	ListView recordedShowList;
-	String[] shows = {"The Littlest Hobo S01E04", "Big Bang Theory S03E05", "Fringe S03E02"};
+	String[] shows = {"The Littlest Hobo S01E04", "Big Bang Theory S03E05", "Fringe S03E02", "Bones S01E04", "Doctor Who S03E10", "Stargate SG-1 S07E08"};
 	
 	Button buttonRecord, buttonRewind, buttonPlayPause, buttonFastForward, buttonStop;
 	TextView mediaStatus;
 	SeekBar mediaPosition;
 	EditText channelNumber;
+	ImageView statusImage;
 	
 	int playStatus = 0;
 	boolean channelBoxClicked = false;
@@ -32,6 +34,7 @@ public class PVRActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.pvr);
+		
 		
 		/*
 		 * Runnables for the Handler 
@@ -43,7 +46,7 @@ public class PVRActivity extends Activity {
 				if(!(progress >= mediaPosition.getMax())) {
 					mediaPosition.setProgress(progress + 10);
 					timerHandler.postDelayed(this, 500);
-				};
+				}
 			}
 		};
 		final Runnable updateMediaPostionRewind = new Runnable() {
@@ -89,13 +92,14 @@ public class PVRActivity extends Activity {
 					mediaStatus.setTextColor(Color.RED);
 					mediaStatus.setText("Recording");
 				}
+				statusUpdate(playStatus, statusImage);
 			}
 		});
 		buttonRewind = (Button)findViewById(R.id.rewindButton);
 		buttonRewind.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View v) {
-				if(playStatus != 0 || playStatus != 10){
+				if(playStatus != 0 && playStatus != 10){
 					timerHandler.removeCallbacks(updateMediaPostion);
 					timerHandler.removeCallbacks(updateMediaPostionFastForward);
 					timerHandler.postDelayed(updateMediaPostionRewind, 500);
@@ -103,6 +107,7 @@ public class PVRActivity extends Activity {
 					mediaStatus.setTextColor(Color.BLACK);
 					mediaStatus.setText("Rewinding");
 				}
+				statusUpdate(playStatus, statusImage);
 			}
 		});
 		buttonPlayPause = (Button)findViewById(R.id.playPauseButton);
@@ -116,6 +121,7 @@ public class PVRActivity extends Activity {
 					timerHandler.removeCallbacks(updateMediaPostionFastForward);
 					timerHandler.postDelayed(updateMediaPostion, 500);
 					playStatus = 1;
+					buttonPlayPause.setText("Pause");
 					mediaStatus.setTextColor(Color.BLACK);
 					mediaStatus.setText("Playing");
 					break;
@@ -124,6 +130,7 @@ public class PVRActivity extends Activity {
 					timerHandler.removeCallbacks(updateMediaPostionRewind);
 					timerHandler.removeCallbacks(updateMediaPostionFastForward);
 					playStatus = 2;
+					buttonPlayPause.setText("Play");
 					mediaStatus.setTextColor(Color.BLACK);
 					mediaStatus.setText("Paused");
 					break;
@@ -132,6 +139,7 @@ public class PVRActivity extends Activity {
 					timerHandler.removeCallbacks(updateMediaPostionFastForward);
 					timerHandler.postDelayed(updateMediaPostion, 500);
 					playStatus = 1;
+					buttonPlayPause.setText("Pause");
 					mediaStatus.setTextColor(Color.BLACK);
 					mediaStatus.setText("Playing");
 					break;
@@ -140,17 +148,19 @@ public class PVRActivity extends Activity {
 					timerHandler.removeCallbacks(updateMediaPostionFastForward);
 					timerHandler.postDelayed(updateMediaPostion, 500);
 					playStatus = 1;
+					buttonPlayPause.setText("Pause");
 					mediaStatus.setTextColor(Color.BLACK);
 					mediaStatus.setText("Playing");
 					break;
 				}
+				statusUpdate(playStatus, statusImage);
 			}
 		});
 		buttonFastForward = (Button)findViewById(R.id.fastForwardButton);
 		buttonFastForward.setOnClickListener(new OnClickListener() {
 			
 			public void onClick(View arg0) {
-				if(playStatus != 0 || playStatus != 10){
+				if(playStatus != 0 && playStatus != 10){
 					timerHandler.removeCallbacks(updateMediaPostion);
 					timerHandler.removeCallbacks(updateMediaPostionRewind);
 					timerHandler.postDelayed(updateMediaPostionFastForward, 500);
@@ -158,6 +168,7 @@ public class PVRActivity extends Activity {
 					mediaStatus.setTextColor(Color.BLACK);
 					mediaStatus.setText("Fast Forwarding");
 				}
+				statusUpdate(playStatus, statusImage);
 			}
 		});
 		buttonStop = (Button)findViewById(R.id.stopButton);
@@ -171,7 +182,9 @@ public class PVRActivity extends Activity {
 				mediaPosition.setProgress(0);
 				mediaStatus.setTextColor(Color.BLACK);
 				mediaStatus.setText("Not Playing");
+				statusUpdate(playStatus, statusImage);
 			}
+			
 		});
 		
 		/*
@@ -194,6 +207,29 @@ public class PVRActivity extends Activity {
 				}
 			}
 		});
+		
+		/*
+		 * Setup Status Icon
+		 */
+		statusImage = (ImageView)findViewById(R.id.pvr_statusIcon);
+		statusUpdate(playStatus, statusImage);
+	}
+	
+	final void statusUpdate(int playStatus, ImageView statusIcon) {
+		switch(playStatus) {
+		case 0:
+			statusIcon.setImageResource(R.drawable.status_red);
+			break;
+		case 1:
+		case 2: 
+		case 3:
+		case 4:
+			statusIcon.setImageResource(R.drawable.status_green);
+			break;
+		case 10:
+			statusIcon.setImageResource(R.drawable.status_yellow);
+			break;
+		}
 	}
 	
 

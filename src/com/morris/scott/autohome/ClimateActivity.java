@@ -18,7 +18,7 @@ public class ClimateActivity extends Activity {
 	 */
 	TextView setTempText, currentTempText;
 	Button upTempButton, downTempButton;
-	ImageView furnaceStatus, acStatus;
+	ImageView furnaceStatus, acStatus, statusIcon;
 	ToggleButton furnaceEnable, acEnable;
 	
 	/*
@@ -78,6 +78,7 @@ public class ClimateActivity extends Activity {
 					currentTempText.setText(currentTemp+tempSuffix);
 				else
 					setTempText.setText(currentTemp+tempSuffix);
+				statusUpdate(furnaceOn, acOn, furnaceState, acState, furnaceStatus, acStatus, statusIcon);
 				handler.postDelayed(this, 1000);
 			};
 		};
@@ -134,8 +135,30 @@ public class ClimateActivity extends Activity {
 			}
 		});
 		
+		furnaceStatus = (ImageView)findViewById(R.id.climate_furnaceStateIcon);
+		acStatus = (ImageView)findViewById(R.id.climate_acStateIcon);
+		statusIcon = (ImageView)findViewById(R.id.climate_statusIcon);
+		statusUpdate(furnaceOn, acOn, furnaceState, acState, furnaceStatus, acStatus, statusIcon);
 		
 	}
 	
-
+	final void statusUpdate(boolean furnaceOn, boolean acOn, boolean furnaceState, boolean acState, ImageView furnaceStatus, ImageView acStatus, ImageView statusIcon ) {
+		if(furnaceState)
+			furnaceStatus.setImageResource(R.drawable.status_green);
+		else
+			furnaceStatus.setImageResource(R.drawable.status_red);
+		
+		if(acState)
+			acStatus.setImageResource(R.drawable.status_green);
+		else
+			acStatus.setImageResource(R.drawable.status_red);
+		
+		if ((furnaceState || acState) && (furnaceOn || acOn))
+			statusIcon.setImageResource(R.drawable.status_green);
+		else if(furnaceState || acState)
+			statusIcon.setImageResource(R.drawable.status_yellow);
+		else
+			statusIcon.setImageResource(R.drawable.status_red);
+				
+	}
 }

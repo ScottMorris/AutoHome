@@ -22,9 +22,9 @@
 					android:layout_height="wrap_content" 
 					android:textColor="#000000" 
 					android:layout_width="wrap_content"
-					android:layout_toLeftOf="@+id/statusIcon">
+					android:layout_toLeftOf="@+id/pvr_statusIcon">
 				</TextView>
-				<ImageView android:id="@+id/statusIcon" 
+				<ImageView android:id="@+id/pvr_statusIcon" 
 					android:layout_height="wrap_content" 
 					android:src="@drawable/status_green" 
 					android:layout_alignParentRight="true" 
@@ -44,7 +44,9 @@
 				android:layout_width="fill_parent" 
 				android:textColor="#000000" 
 				android:text="@string/pvrShowListTitle" 
-				android:id="@+id/showListTitle" android:gravity="center">
+				android:id="@+id/showListTitle" 
+				android:gravity="center"
+				android:textSize="30px">
 			</TextView>
 		<ListView android:id="@+id/pvrShowList" 
 			android:layout_width="wrap_content" 
@@ -52,7 +54,7 @@
 			android:layout_alignLeft="@+id/showListTitle" 
 			android:layout_alignRight="@+id/showListTitle"
 			android:background="#888888" 
-			android:layout_height="135px">
+			android:layout_height="256px">
 		</ListView>
 		<TextView android:id="@+id/pvr_mediaStatus" 
 			android:layout_width="fill_parent" 
@@ -60,7 +62,8 @@
 			android:layout_height="wrap_content" 
 			android:text="Not Playing" 
 			android:layout_alignLeft="@+id/pvrShowList" 
-			android:layout_alignRight="@+id/pvrShowList">
+			android:layout_alignRight="@+id/pvrShowList"
+			android:textColor="#FFFFFF">
 		</TextView>
 		<SeekBar android:layout_height="wrap_content" 
 			android:id="@+id/pvr_mediaPosition" 
@@ -81,7 +84,7 @@
 			<Button android:layout_height="50px" 
 				android:layout_width="wrap_content"  
 				android:id="@+id/recordButton" 
-				android:text="Record">
+				android:text="Rec">
 			</Button>
 			<Button android:layout_height="50px" 
 				android:layout_width="wrap_content"  
@@ -128,5 +131,4 @@
 			</EditText>
 		</RelativeLayout>
 	</LinearLayout>
-
 </RelativeLayout>
