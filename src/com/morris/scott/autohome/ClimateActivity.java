@@ -1,7 +1,6 @@
 package com.morris.scott.autohome;
 
 import android.app.Activity;
-import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.os.Handler;

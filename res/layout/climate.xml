@@ -8,23 +8,27 @@
 		android:id="@+id/titleBar">
 		<RelativeLayout android:id="@+id/RelativeLayout01" 
 			android:layout_width="wrap_content" 
-			android:layout_height="wrap_content">
+			android:layout_height="wrap_content" android:background="@drawable/titlebar" android:gravity="center_vertical">
 				<TextView android:layout_width="fill_parent" 
 					android:id="@+id/title" 
 					android:text="@string/climateTitle" 
 					android:layout_height="wrap_content" 
 					android:textColor="#000000">
 				</TextView>
-				<TextView android:layout_width="fill_parent" 
-					android:gravity="right" 
+				<TextView android:gravity="right" 
 					android:id="@+id/status" 
 					android:text="@string/status" 
 					android:layout_height="wrap_content" 
-					android:textColor="#000000">
+					android:textColor="#000000" 
+					android:layout_width="wrap_content"
+					android:layout_toLeftOf="@+id/statusIcon">
 				</TextView>
 				<ImageView android:id="@+id/statusIcon" 
-					android:layout_width="wrap_content" 
-					android:layout_height="wrap_content">
+					android:layout_height="wrap_content" 
+					android:src="@drawable/status_green" 
+					android:layout_alignParentRight="true" 
+					android:layout_width="wrap_content"
+					android:layout_centerVertical="true">
 				</ImageView>
 		</RelativeLayout>
 	</LinearLayout>
