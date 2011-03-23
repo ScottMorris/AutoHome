@@ -25,4 +25,30 @@ The Kitchen Activity is incomplete.  It presents the user with an Appliance bar 
 
 DEVIATION FROM SKETCHES
 
+Home Screen
 
+The home screen looks similar to what I had laded out in the sketches, however since it was the first Activity I've ever made in Android I wasn't sure on the exact manor of implementing the IconViews with the TextViews.  I instead tried to use a GridView because I thought I would do a nice job at laying out a grid.  I found I wasn't quite what I wanted the more I worked on the rest of the application.  The large Status Icon was omitted because of time and a little one was mocked up in the top right hand corner to make the appearance similar to that of the other activities.
+
+Television
+
+The internal name of this Activity is PVR but that looks a bit cheesy and assumes people know what it means (an assumption I didn't want to make).  The layout of this Activity is similar to what I laded out on paper but changed because of the time constraint I had on making the custom control.  I replicated its functionality through the use of standard Android buttons.  
+
+The show list was originally advertised to the people it was shown to on paper as allowing them to select and play that show they tab on.  From there they could Pause, Rewind or Fast Forward the show.  If they want to record a show, they can enter the channel number in the channel number box and hit record.  Due to time constrains these were not implemented.  Instead the basic structure of how the ListView will display shows and the interactions of the playback buttons along with the status of the Activity were explored and implemented.
+
+The volume slider was removed with the intention of attaching the volume handling with the device's hardware volume keys (see the XBMC Android app for an example).  This also was not completed.
+
+Climate
+
+The Climate Activity is extremely similar to the layout sketched.  Functionality was added to allow the user to test out the Air Conditioner, as no external temperature is known by it the current temp is increased constantly every second.  What was added was when the user gets and sets the temperature using the up and down buttons.  When they perform this task the current temp is moved to the little spot where the set temperature is always displayed and the temperature being set is moved to where the current temp is, but in a different colour.  After a few seconds the display is switched with the colour staying on the set temp but now back in its right location.  After a few more seconds everything is back to black.
+
+Kitchen
+
+The Kitchen Activity is just a mock up because I ran out of time.  The original sketch shows a stove being managed but in the interest of time a coffee maker was mocked up.  The tab bar shown was redesigned to be Selection bar (selection_bar.jpg).
+
+Stereo
+
+This never made it very far on paper or in code.
+
+NOTES
+
+The reason my time was short for this assignment was because I'm a participant in the ECE Fourth Year Design Project Symposium and have been getting ready for that.
