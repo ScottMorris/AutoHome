@@ -1,0 +1,28 @@
+ASSIGNMENT 4 README
+
+AUTHOR
+
+Scott Morris
+sibmorri
+
+DESIGN
+
+Home Screen
+
+Upon opening the application, the user is presented with a home screen that allows them to select a task they wish to perform.  Currently the options available are Television, Climate controls and Kitchen (which includes a coffee maker).
+
+Television
+
+The Television Activity allows the user to interact with their PVR (Personal Video Recorder).  It presents to them the past shows that have been recorded.  They can Play/Pause the content, as well as Rewind and Fast Forward and arbitrarily choose a playback position.  They also have the option to input a particular channel number and record from it.  The position within the media is given by a Seek Bar and the playback status is given in a Text View.  The Status at the top reflects an overview of the Activity.  Green means the system is playing back.  Yellow means that something is recording and Red means nothing is active.
+
+Climate
+
+The Climate Activity allows the user to manage their temperature and HVAC system (the furnace and A/C) states.  They can set a temperature using the up and down buttons, which will display temporarily in the current temperature display.  The User can also choose to enable or disable the furnace and A/C.  The present state of the furnace and A/C is displayed by a status icon by their respective name.  The Status at the top displays a general state of the Activity.  Green means the furnace or A/C is active.  Yellow means that the furnace or the A/C is enabled but not active and Red means the system is off.
+
+Kitchen
+
+The Kitchen Activity is incomplete.  It presents the user with an Appliance bar that allows them to choose what appliance they wish to manage.  The one that is currently outlined is the Coffee Maker.  The user can set the auto brew time so it will automatically turn on and brew coffee.  They can also select if the Coffee Maker is currently on or if the Auto Brew will be active.  The Status indicator doesn't function, but would show an average sate of the system.  Further indication could be given to the user as a small icon on each of the appliance icons in the appliance bar.
+
+DEVIATION FROM SKETCHES
+
+

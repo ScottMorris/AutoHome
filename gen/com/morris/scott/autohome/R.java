@@ -14,21 +14,23 @@ public final class R {
         public static final int climatePadding=0x7f040000;
     }
     public static final class drawable {
-        public static final int climate_pressed=0x7f020000;
-        public static final int climate_unpressed=0x7f020001;
-        public static final int icon=0x7f020002;
-        public static final int kichen_appliance_bar_background=0x7f020003;
-        public static final int kitchen_coffee=0x7f020004;
-        public static final int kitchen_pan=0x7f020005;
-        public static final int kitchen_stove=0x7f020006;
-        public static final int pvr_pressed=0x7f020007;
-        public static final int pvr_unpressed=0x7f020008;
-        public static final int status_colour=0x7f020009;
-        public static final int status_green=0x7f02000a;
-        public static final int status_red=0x7f02000b;
-        public static final int status_red_brush=0x7f02000c;
-        public static final int status_yellow=0x7f02000d;
-        public static final int titlebar=0x7f02000e;
+        public static final int app_icon=0x7f020000;
+        public static final int app_icon2=0x7f020001;
+        public static final int climate_pressed=0x7f020002;
+        public static final int climate_unpressed=0x7f020003;
+        public static final int icon=0x7f020004;
+        public static final int kichen_appliance_bar_background=0x7f020005;
+        public static final int kitchen_coffee=0x7f020006;
+        public static final int kitchen_pan=0x7f020007;
+        public static final int kitchen_stove=0x7f020008;
+        public static final int pvr_pressed=0x7f020009;
+        public static final int pvr_unpressed=0x7f02000a;
+        public static final int status_colour=0x7f02000b;
+        public static final int status_green=0x7f02000c;
+        public static final int status_red=0x7f02000d;
+        public static final int status_red_brush=0x7f02000e;
+        public static final int status_yellow=0x7f02000f;
+        public static final int titlebar=0x7f020010;
     }
     public static final class id {
         public static final int CommonTasks=0x7f06002a;
